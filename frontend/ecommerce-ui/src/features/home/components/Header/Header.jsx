@@ -1,21 +1,14 @@
-//import { useState } from "react";
-//import { Link } from "react-router-dom";
-
 import {
-    AppBar,
     Box,
-    Toolbar,
 } from "@mui/material";
 
-import {
 
-} from "@mui/icons-material";
 
 import { ANNOUNCEMENTS } from "../../../../common/constants/announcementConstants";
 import AnnouncementBar from "../../module/AnnouncementBar";
-//import { NAVIGATIONCONSTANTS } from "../../../../common/constants/navigationConstants";
-import logo from "../../../../assets/icons/ArtVedaLogo.png";
 
+import NavMenu from "./NavMenu";
+import Banner from "./Banner";
 
 const Header = () => {
 
@@ -23,45 +16,23 @@ const Header = () => {
 
     return (
         <>
-            {/* Announcement Bar code goes here */}
-            <AnnouncementBar announcements={ANNOUNCEMENTS} />
-            <AppBar
-                position="sticky"
-                elevation={0}
+            <Box
                 sx={{
-                    bgcolor: "#fff",
-                    color: "#2E2A27",
-                    borderBottom: "1px solid #EFE7DB",
+                    position: "sticky",
+                    top: 0,
+                    zIndex: (theme) => theme.zIndex.appBar,
                 }}
             >
-                <Toolbar
-                    sx={{
-                        maxWidth: "1000px",
-                        width: "100%",
-                        mx: "auto",
-                        py: 1,
-                    }}
-                >
-                    {/* Logo and Navigation code goes here */}
-                    <Box
-                        sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            textDecoration: "none",
-                        }}
-                    >
-                        <Box
-                            component="img"
-                            src={logo}
-                            alt="ArtVeda"
-                            sx={{
-                                height: 200,
-                            }}
-                        />
-                    </Box>
+                {/* Scrolls Away */}
+                <AnnouncementBar announcements={ANNOUNCEMENTS} />
+                <NavMenu />
+                
+            </Box>
 
-                </Toolbar>
-            </AppBar>
+            {/* Banner And Logo */}
+            <Banner />
+            
+
         </>
     );
 }

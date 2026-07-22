@@ -24,4 +24,9 @@ export const NAVIGATION_MENUS = [
     label: "Contact",
     path: "/contact",
   },
+  {
+    id: 6,
+    label: "Cources & Workshops",
+    path: "/cources-and-workshops",
+  },
 ];
